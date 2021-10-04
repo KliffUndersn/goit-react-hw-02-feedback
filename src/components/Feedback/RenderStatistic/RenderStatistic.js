@@ -1,16 +1,22 @@
 import React from "react";
-import PropTypes from "prop-types"
-import Feedback from "../Feedback";
 
-const Statistic = ({value}) => {
-   return( <ul>
-  <li>Good: {value.good}</li>
-  <li>Neutral: {value.neutral}</li>
-  <li>Bad: {value.bad}</li>
-  {/* <li>Total: {total}</li>
-  <li>Positive feedback: {feedback}</li> */}
-  </ul>)
-    
-}
+const Statistic = ({
+  value,
+  countTotalFeedback,
+  countPositiveFeedbackPercentage,
+}) => {
+  return (
+    <ul>
+      <li>Good: {value.good}</li>
+      <li>Neutral: {value.neutral}</li>
+      <li>Bad: {value.bad}</li>
+      <li>Total: {countTotalFeedback}</li>
+      <li>
+        Positive feedback:
+        {countPositiveFeedbackPercentage || 0} %
+      </li>
+    </ul>
+  );
+};
 
-export default Statistic
+export default Statistic;
