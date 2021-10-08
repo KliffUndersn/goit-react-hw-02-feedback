@@ -31,7 +31,7 @@ export default class Feedback extends Component {
     return (
       <div>
         <h1>Please Leave feedback</h1>
-        <RenderButtons clickHandler={this.onClick} />
+        <RenderButtons name={this.state} clickHandler={this.onClick} />
         <h2>Statistics</h2>
 
         {this.countPositiveFeedbackPercentage() ? (

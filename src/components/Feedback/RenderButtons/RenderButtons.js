@@ -1,39 +1,24 @@
 import React from "react";
 
-const RenderButtons = ({ clickHandler }) => {
+const RenderButtons = ({ clickHandler,name}) => {
+const names = Object.keys(name)
   return (
+    <>
     <ul>
-      <li>
-        <button
-          type="button"
-          onClick={(e) => {
-            clickHandler(e.target.textContent.toLowerCase());
-          }}
-        >
-          Good
-        </button>
-      </li>
-      <li>
-        <button
-          type="button"
-          onClick={(e) => {
-            clickHandler(e.target.textContent.toLowerCase());
-          }}
-        >
-          Neutral
-        </button>
-      </li>
-      <li>
-        <button
-          type="button"
-          onClick={(e) => {
-            clickHandler(e.target.textContent.toLowerCase());
-          }}
-        >
-          Bad
-        </button>
-      </li>
-    </ul>
+   { names.map((i)=>   
+    <li key={i}>
+      <button
+        type="button"
+        onClick={() => {
+          clickHandler(i);
+        }}
+      >
+        {i}
+      </button>
+    </li>
+  )}
+  </ul>
+  </>
   );
 };
 
